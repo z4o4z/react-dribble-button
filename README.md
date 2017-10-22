@@ -14,7 +14,8 @@ $ npm install react-dribble-button
 
 [Try it out](https://z4o4z.github.io/react-dribble-button/storybook-static/index.html)
 
-| ![](./demo/demo-1.gif) | ![](./demo/demo-2.gif) | ![](./demo/demo-3.gif) | ![](./demo/demo-4.gif) |
+![](./demo/demo-1.gif)
+![](./demo/demo-4.gif)
 
 ## Basic Usage
 
