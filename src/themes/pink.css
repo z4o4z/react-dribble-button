@@ -1,0 +1,5 @@
+@import '../mixin.css';
+
+.react-dribble-button {
+  @mixin effect pink, #ad1457, #ad14574d, #e91e63,
+}

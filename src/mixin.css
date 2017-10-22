@@ -1,0 +1,22 @@
+@define-mixin effect $name, $backgroundColor, $backgroundColorAlpha, $backgroundAccentColor {
+	&.--$(name) {
+    background-color: $backgroundColor;
+    background-image: radial-gradient(
+      ellipse at center,
+      $backgroundAccentColor 0%,
+      transparent 60%,
+      $backgroundColor 100%
+    );
+  }
+
+  &.--$(name) > &__effect {
+    background-image: radial-gradient(
+      ellipse at center,
+      transparent 0%,
+      $backgroundAccentColor 7%,
+      $backgroundAccentColor 30%,
+      transparent 60%,
+      $backgroundColorAlpha 100%
+    );
+  }
+}

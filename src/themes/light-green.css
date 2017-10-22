@@ -1,0 +1,5 @@
+@import '../mixin.css';
+
+.react-dribble-button {
+  @mixin effect light-green, #558b2f, #558b2f4d, #8bc34a;
+}
