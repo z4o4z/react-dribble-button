@@ -1,6 +1,6 @@
 {
   "name": "react-dribble-button",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "The Button component with pretty nice hive and click effects",
   "main": "lib/index.js",
   "scripts": {
@@ -8,12 +8,17 @@
     "build": "npm run build:css && npm run build:dev && npm run build:prod",
     "build:css": "postcss './src/**/*.css' --dir ./lib/css/",
     "build:dev": "babel ./src/index.js --out-file ./lib/react-dribble-button.js",
-    "build:prod":
-      "NODE_ENV=production babel ./src/index.js --out-file ./lib/react-dribble-button.prod.js",
+    "build:prod": "NODE_ENV=production babel ./src/index.js --out-file ./lib/react-dribble-button.prod.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "keywords": ["react", "button", "component", "cool", "animations"],
+  "keywords": [
+    "react",
+    "button",
+    "component",
+    "cool",
+    "animations"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
