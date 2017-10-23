@@ -14,8 +14,7 @@ $ npm install react-dribble-button
 
 [Try it out](https://z4o4z.github.io/react-dribble-button/storybook-static/index.html)
 
-![](./demo/demo-1.gif)
-![](./demo/demo-4.gif)
+| ![](./demo/demo-1.gif) | ![](./demo/demo-4.gif) |
 
 ## Basic Usage
 
@@ -46,11 +45,12 @@ The `DribbleButton` component has a few properties, as described below.
 
 | Property | Type | Defaut | Description |
 | -------- | ---- | -------- | ----------- |
-| `color` | `string` | `{}` | The color theme. Should be one of the folowing strings: 'red' | 'pink' | 'blue' | 'cyan' | 'teal' | 'lime' | 'grey' | 'green' | 'amber' | 'brown' | 'black' | 'orange' | 'purple' | 'yellow' | 'indigo' | 'default' | 'blue-grey' | 'light-blue' | 'light-green' | 'deep-orange' | 'deep-purple | `onClick` | `number` | `Dimensions.get('window').width` | Component's width. |
-| `children` | `number` | `Dimensions.get('window').height` | Component's height. |
-| `className` | `func` | `null` | To get a reference to the scrollable component. |
-| `component` | `object` | `{}` | These styles will be applied to the scroll view. |
-| `effectClassName` | `number` | `45` | This is the height of sticky(fixed) header. |
+| `color` | `string` | `default` | The color theme. Should be one of the folowing strings: 'red' | 'pink' | 'blue' | 'cyan' | 'teal' | 'lime' | 'grey' | 'green' | 'amber' | 'brown' | 'black' | 'orange' | 'purple' | 'yellow' | 'indigo' | 'default' | 'blue-grey' | 'light-blue' | 'light-green' | 'deep-orange' | 'deep-purple
+| `onClick` | `function` | `null` | Click handler. |
+| `children` | `any` | `null` | Children element. |
+| `className` | `string` | `''` | Class name of the component. |
+| `component` | `string | Component` | `button` | Component type. |
+| `effectClassName` | `string` | `''` | Class name of the effect component. |
 
 
 ## Contributing

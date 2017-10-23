@@ -48,7 +48,7 @@ export default class ReactDribbleButton extends PureComponent {
     effects: [],
   };
 
-  onClick = event => {
+  onClick = (event) => {
     this.updateEffects(event);
 
     if (this.props.onClick) {
@@ -71,7 +71,7 @@ export default class ReactDribbleButton extends PureComponent {
     }));
   }
 
-  renderEffects = effectClassName => {
+  renderEffects = (effectClassName) => {
     if (!this.button) {
       return null;
     }
@@ -98,14 +98,16 @@ export default class ReactDribbleButton extends PureComponent {
   };
 
   render() {
-    const { color, children, component, className, effectClassName, ...props } = this.props;
+    const {
+      color, children, component, className, effectClassName, ...props
+    } = this.props;
 
     const Component = component;
 
     return (
       <Component
         {...props}
-        ref={ref => {
+        ref={(ref) => {
           this.button = ref;
         }}
         onClick={this.onClick}
