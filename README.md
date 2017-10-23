@@ -49,7 +49,7 @@ The `DribbleButton` component has a few properties, as described below.
 | `onClick` | `function` | `null` | Click handler. |
 | `children` | `any` | `null` | Children element. |
 | `className` | `string` | `''` | Class name of the component. |
-| `component` | `string | Component` | `button` | Component type. |
+| `component` | `string or Component` | `button` | Component type. |
 | `effectClassName` | `string` | `''` | Class name of the effect component. |
 
 
