@@ -26,9 +26,9 @@ import 'react-dribble-button/css/deep-orange.css';
 // Inside of a component's render() method:
 render() {
   return (
-    <Button colorSchema="deep-orange" onClick={this.onClick}>
+    <DribbleButton colorSchema="deep-orange" onClick={this.onClick}>
       Try this cool color!
-    </Button>
+    </DribbleButton>
   );
 }
 ```
