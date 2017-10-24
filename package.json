@@ -1,24 +1,30 @@
 {
   "name": "react-dribble-button",
-  "version": "0.0.1",
+  "version": "0.1.2",
   "description": "The Button component with pretty nice hive and click effects",
   "main": "lib/index.js",
   "scripts": {
     "clear": "rm -rf ./lib/css | rm ./lib/react-dribble-button.*",
+    "lint": "eslint -c ./.eslintrc . ",
+    "format": "prettier-eslint --write \"src/index.js\" \"stories/index.js\"",
     "build": "npm run build:css && npm run build:dev && npm run build:prod",
     "build:css": "postcss './src/**/*.css' --dir ./lib/css/",
     "build:dev": "babel ./src/index.js --out-file ./lib/react-dribble-button.js",
-    "build:prod":
-      "NODE_ENV=production babel ./src/index.js --out-file ./lib/react-dribble-button.prod.js",
+    "build:prod": "NODE_ENV=production babel ./src/index.js --out-file ./lib/react-dribble-button.prod.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "keywords": ["react", "button", "component", "cool", "animations"],
+  "keywords": [
+    "react",
+    "button",
+    "component",
+    "cool",
+    "animations"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.13",
-    "@storybook/addon-links": "^3.2.13",
     "@storybook/react": "^3.2.13",
     "autoprefixer": "^7.1.6",
     "babel-eslint": "^8.0.1",
@@ -35,6 +41,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.4.0",
     "postcss-cli": "^4.1.1",
     "postcss-color-hex-alpha": "^3.0.0",
     "postcss-loader": "^2.0.8",
