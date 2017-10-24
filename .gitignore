@@ -1,7 +1,5 @@
 node_modules
 .DS_Store
 .vscode
-lib/css
-lib/react-dribble-button.js
-lib/react-dribble-button.prod.js
+lib
 storybook-static

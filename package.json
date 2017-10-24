@@ -4,22 +4,15 @@
   "description": "The Button component with pretty nice hive and click effects",
   "main": "lib/index.js",
   "scripts": {
-    "clear": "rm ./lib/react-dribble-button.*",
+    "clear": "rm -rf ./lib",
     "lint": "eslint -c ./.eslintrc . ",
     "format": "prettier-eslint --write \"src/**/*.js\" \"stories/index.js\"",
-    "build:dev": "babel ./src/index.js --out-file ./lib/react-dribble-button.js",
-    "build:prod": "NODE_ENV=production babel ./src/index.js --out-file ./lib/react-dribble-button.prod.js",
+    "build": "babel src --out-dir lib",
     "storybook": "start-storybook -p 6006",
-    "prepublish": "npm run build:dev && npm run build:prod",
+    "prepublish": "npm run clear && npm run build",
     "build-storybook": "build-storybook"
   },
-  "keywords": [
-    "react",
-    "button",
-    "component",
-    "cool",
-    "animations"
-  ],
+  "keywords": ["react", "button", "component", "cool", "animations"],
   "author": "",
   "license": "MIT",
   "devDependencies": {
@@ -30,7 +23,6 @@
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.10",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "6.24.1",

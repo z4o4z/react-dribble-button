@@ -10,10 +10,5 @@
     ],
     "react"
   ],
-  "plugins": ["transform-object-rest-spread", "transform-class-properties", "transform-runtime"],
-  "env": {
-    "production": {
-      "plugins": ["transform-react-remove-prop-types"]
-    }
-  }
+  "plugins": ["transform-object-rest-spread", "transform-class-properties", "transform-runtime"]
 }
