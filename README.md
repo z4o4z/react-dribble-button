@@ -20,13 +20,11 @@ $ npm install react-dribble-button
 
 ```js
 import DribbleButton from 'react-dribble-button';
-import 'react-dribble-button/css/style.css';
-import 'react-dribble-button/css/deep-orange.css';
 
 // Inside of a component's render() method:
 render() {
   return (
-    <DribbleButton colorSchema="deep-orange" onClick={this.onClick}>
+    <DribbleButton color="deep-orange" onClick={this.onClick} animationDuration={1000} >
       Try this cool color!
     </DribbleButton>
   );
@@ -51,6 +49,7 @@ The `DribbleButton` component has a few properties, as described below.
 | `className` | `string` | `''` | Class name of the component. |
 | `component` | `string or Component` | `button` | Component type. |
 | `effectClassName` | `string` | `''` | Class name of the effect component. |
+| `animationDuration` | `number` | `650` | The dribble animation duration in ms. |
 
 
 ## Contributing
