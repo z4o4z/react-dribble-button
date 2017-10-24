@@ -4,7 +4,6 @@
   /* ***** react-dribble-button ***** */
 
   --react-dribble-button--height: 50px;
-  --react-dribble-button--padding: 20px 50px;
   --react-dribble-button--font-size: 16px;
   --react-dribble-button--box-shadow: rgba(0, 0, 0, 0.3) 0 8px 8px 0;
   --react-dribble-button--border-radius: 4px;
@@ -23,7 +22,6 @@
 
   box-sizing: border-box;
 
-  padding-top: var(--react-dribble-button--padding);
   border: none;
   border-radius: var(--react-dribble-button--border-radius);
 
@@ -42,7 +40,7 @@
 
   transform: translateZ(0);
 
-  transition: box-shadow 0.3s ease, background 0.3s ease;
+  transition: box-shadow 0.3s ease, background-position 0.3s ease;
 
   &:focus {
     outline: none;
@@ -63,17 +61,17 @@
     animation: ripple 0.65s linear both;
   }
 
-  @mixin effect default, #0277bd, #0277bd4d, #03a9f4;
+  @mixin effect default, #0277bd, #0277bd4d, #0277bd00, #03a9f4;
 }
 
 @keyframes ripple {
   0% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(0);
+    transform: translate3d(-50%, -50%, 0) scale(0);
   }
 
   100% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(3);
+    transform: translate3d(-50%, -50%, 0) scale(3);
   }
 }

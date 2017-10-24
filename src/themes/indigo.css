@@ -1,5 +1,5 @@
 @import '../mixin.css';
 
 .react-dribble-button {
-  @mixin effect indigo, #283593, #2835934d, #3f51b5;
+  @mixin effect indigo, #283593, #2835934d, #28359300, #3f51b5;
 }
