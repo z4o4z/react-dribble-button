@@ -39,8 +39,6 @@ Please clone the repo and run `npm run storybook` or `yarn storybook` to show ex
 
 The `DribbleButton` component has a few properties, as described below.
 
-> NOTE: To use color themes needs import specific theme from `'react-dribble-button/css/[color-theme].css'`
-
 | Property | Type | Defaut | Description |
 | -------- | ---- | -------- | ----------- |
 | `color` | `string` | `default` | The color theme. Should be one of the folowing strings: 'red' | 'pink' | 'blue' | 'cyan' | 'teal' | 'lime' | 'grey' | 'green' | 'amber' | 'brown' | 'black' | 'orange' | 'purple' | 'yellow' | 'indigo' | 'default' | 'blue-grey' | 'light-blue' | 'light-green' | 'deep-orange' | 'deep-purple
