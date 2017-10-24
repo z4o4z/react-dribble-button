@@ -1,9 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import injectSheet from 'react-jss';
 
-const ANIMATION_DURATION = 500;
+import Effect from './components/Effect';
 
-export default class ReactDribbleButton extends PureComponent {
+import styles from './styles';
+
+class ReactDribbleButton extends PureComponent {
   static propTypes = {
     color: PropTypes.oneOf([
       'red',
@@ -28,11 +31,16 @@ export default class ReactDribbleButton extends PureComponent {
       'deep-orange',
       'deep-purple',
     ]),
+    classes: PropTypes.shape({
+      effect: PropTypes.string,
+      button: PropTypes.string,
+    }).isRequired,
     onClick: PropTypes.func,
     children: PropTypes.children,
     className: PropTypes.string,
     component: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     effectClassName: PropTypes.string,
+    animationDuration: PropTypes.number,
   };
 
   static defaultProps = {
@@ -42,6 +50,7 @@ export default class ReactDribbleButton extends PureComponent {
     className: '',
     component: 'button',
     effectClassName: '',
+    animationDuration: 650,
   };
 
   state = {
@@ -58,48 +67,50 @@ export default class ReactDribbleButton extends PureComponent {
 
   updateEffects({ pageX, pageY }) {
     const now = Date.now();
+    const { animationDuration } = this.props;
 
-    this.setState(({ effects }) => ({
-      effects: [
-        ...effects.filter(({ date }) => now - date < ANIMATION_DURATION),
-        {
-          date: Date.now(),
-          pageX,
-          pageY,
-        },
-      ],
-    }));
+    this.setState(({ effects }) => {
+      const activeEffects = effects.filter(({ date }) => now - date < animationDuration);
+
+      return {
+        effects: [...activeEffects, { date: now, pageX, pageY }],
+      };
+    });
   }
 
-  renderEffects = (effectClassName) => {
+  renderEffects = ({ effect }, effectClassName) => {
     if (!this.button) {
       return null;
     }
 
     const { left, top } = this.button.getBoundingClientRect();
+
     const diameter = Math.max(this.button.offsetWidth, this.button.offsetHeight);
+    const offsetTop = top + window.pageYOffset;
+    const offsetLeft = left + window.pageXOffset;
 
-    return this.state.effects.map(({ date, pageX, pageY }) => {
-      const effectStyle = {
-        top: `${pageY - (top + window.pageYOffset)}px`,
-        left: `${pageX - (left + window.pageXOffset)}px`,
-        width: `${diameter}px`,
-        height: `${diameter}px`,
-      };
+    const className = `${effect} ${effectClassName}`;
 
-      return (
-        <i
-          key={date}
-          style={effectStyle}
-          className={`react-dribble-button__effect ${effectClassName}`}
-        />
-      );
-    });
+    return this.state.effects.map(({ date, pageX, pageY }) => (
+      <Effect
+        key={date}
+        top={pageY - offsetTop}
+        left={pageX - offsetLeft}
+        size={diameter}
+        className={className}
+      />
+    ));
   };
 
   render() {
     const {
-      color, children, component, className, effectClassName, ...props
+      color,
+      classes,
+      children,
+      component,
+      className,
+      effectClassName,
+      ...props
     } = this.props;
 
     const Component = component;
@@ -111,12 +122,14 @@ export default class ReactDribbleButton extends PureComponent {
           this.button = ref;
         }}
         onClick={this.onClick}
-        className={`react-dribble-button --${color} ${className}`}
+        className={`${classes.button} ${className}`}
       >
-        {this.renderEffects(effectClassName)}
+        {this.renderEffects(classes, effectClassName)}
 
         {children}
       </Component>
     );
   }
 }
+
+export default injectSheet(styles)(ReactDribbleButton);
