@@ -36,7 +36,7 @@ class ReactDribbleButton extends PureComponent {
       button: PropTypes.string,
     }).isRequired,
     onClick: PropTypes.func,
-    children: PropTypes.children,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
     className: PropTypes.string,
     component: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     effectClassName: PropTypes.string,
@@ -110,6 +110,7 @@ class ReactDribbleButton extends PureComponent {
       component,
       className,
       effectClassName,
+      animationDuration,
       ...props
     } = this.props;
 
