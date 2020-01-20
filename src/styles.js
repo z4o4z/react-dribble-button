@@ -18,7 +18,7 @@ export default {
     boxSizing: 'border-box',
 
     border: 'none',
-    borderRadius: '4px',
+    borderRadius: '12px',
 
     fontSize: '16px',
     textAlign: 'center',
